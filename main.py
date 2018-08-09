@@ -5,10 +5,8 @@ import secret
 
 
 def answer(text):
-        results = ["넵??","🐕🐕🐕","🐩🐩🐩","👍등장👍"]
     if "송이" in text:
-        num = random.randrange(0,3)
-        self.outputs.append([text, results[num]])
+        reply = "네^ㅇ^!!??"
     elif "주사위" == text:
         reply = str(random.randint(1, 6))
     else:
@@ -20,6 +18,14 @@ class HelloPlugin(Plugin):
         reply = answer(data["text"])
         if reply is not None:
             self.outputs.append([data["channel"],reply])
+            
+class Hello(Plugin):
+    def process_message(self, data):
+        results =['할수있댕!!왈왈','간식주세요','으으으으으르르르렁','같이해요']
+        if "댕댕" in data["text"]:
+            num = random.randrange(0,3)
+            self.outputs.append([data["channel"], results[num]])
+
 
 
 config = {
