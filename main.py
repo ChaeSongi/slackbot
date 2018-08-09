@@ -4,17 +4,20 @@ import random
 import secret
 
 
+def answer(text):
+    if "송이" in data["text"]:
+        reply = "넵??"
+    elif "주사위" == data["text"]:
+        reply = str(random.randint(1, 6))
+    else:
+        reply = None
+    return reply
+
 class HelloPlugin(Plugin):
     def process_message(self, data):
-        reply =['네 송이님','왜요?','🐕🐕🐕']
-        if "송이" in data["text"]:
-            num = random.randrange(0,2)
-            self.outputs.append([data["channel"], reply[num]])
-        elif "주사위" == data["text"]:
-            die = str(random.randint(1, 6))
-            self.outputs.append([data["channel"], die])
-        else:
-            pass
+        reply = answer(data["text"])
+        if reply is not None:
+            self.outputs.append([data["channel"],reply])
 
 
 config = {
