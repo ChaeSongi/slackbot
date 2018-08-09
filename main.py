@@ -9,6 +9,7 @@ class HelloPlugin(Plugin):
         if "송이" in data["text"]:
             self.outputs.append([data["channel"], "네~?"])
         elif "주사위" in data["text"]:
+            self.outputs.append([data["channel"], "확인~?"])
             die = str(random.randint(1, 6))
             self.outputs.append([data["channel"], die])
         else:
