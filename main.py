@@ -5,8 +5,10 @@ import secret
 
 
 def answer(text):
+        results = ["넵??","🐕🐕🐕","🐩🐩🐩","👍등장👍"]
     if "송이" in text:
-        reply = "넵??"
+        num = random.randrange(0,3)
+        self.outputs.append([text, results[num]])
     elif "주사위" == text:
         reply = str(random.randint(1, 6))
     else:
