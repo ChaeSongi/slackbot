@@ -5,9 +5,9 @@ import secret
 
 
 def answer(text):
-    if "송이" in data["text"]:
+    if "송이" in text:
         reply = "넵??"
-    elif "주사위" == data["text"]:
+    elif "주사위" == text:
         reply = str(random.randint(1, 6))
     else:
         reply = None
